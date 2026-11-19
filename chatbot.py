@@ -51,7 +51,7 @@ def total_tokens_used(messages):
           print(f"[token count error]: {e}")
           return 0
 
-def enfore_token_budget(message,budget=TOKEN_BUDGET):
+def enforce_token_budget(message,budget=TOKEN_BUDGET):
      try :
           while total_tokens_used(messages) > budget :
                if len(messages) <= 2:
@@ -75,7 +75,7 @@ def chat (user_input):
      messages.append({
                          "role":"assistant",
                          "content":reply} )
-     enfore_token_budget(messages)
+     enforce_token_budget(messages)
 
      return reply
 
